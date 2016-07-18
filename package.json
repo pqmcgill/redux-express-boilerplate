@@ -4,7 +4,9 @@
   "description": "example dev setup for react/redux/webpack/node/express",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+		"start": "node server.js",
+    "test": "cross-env NODE_ENV-test mocha --recursive --compilers js:babel-register --require ./test/setup.js",
+		"test:watch": "npm test -- --watch"
   },
   "author": "Patrick McGill",
   "license": "MIT",
