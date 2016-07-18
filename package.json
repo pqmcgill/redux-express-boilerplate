@@ -1,0 +1,11 @@
+{
+  "name": "react-express-boilerplate",
+  "version": "1.0.0",
+  "description": "example dev setup for react/redux/webpack/node/express",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "author": "Patrick McGill",
+  "license": "MIT"
+}
