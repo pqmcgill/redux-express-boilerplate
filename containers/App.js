@@ -12,6 +12,7 @@ class App extends Component {
 				<h2>{ sample }</h2>
 				<button onClick={ actions.foo }>Foo</button>
 				<button onClick={ actions.bar }>Bar</button>
+				<button onClick={ actions.asyncFoobar }>Foobar thunk</button>
 			</div>
 		)
 	}
