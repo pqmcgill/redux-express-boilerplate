@@ -7,3 +7,15 @@ export function foo () {
 export function bar () {
 	return { type: types.BAR };
 }
+
+export function foobar () {
+	return { type: types.FOOBAR };
+}
+
+export function asyncFoobar () {
+	return dispatch => {
+		setTimeout(() => {
+			dispatch(foobar());
+		}, 1000);
+	}
+}

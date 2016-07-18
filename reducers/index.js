@@ -7,6 +7,8 @@ const sample = (state = 'foobar', action) => {
 			return 'foobbar';
 		case types.BAR:
 			return 'barbasol';
+		case types.FOOBAR:
+			return 'sweet! async thunks are working! who\'da thunk it?!';
 		default: 
 			return state;
 	}
