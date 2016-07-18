@@ -9,6 +9,8 @@ const sample = (state = 'foobar', action) => {
 			return 'barbasol';
 		case types.FOOBAR:
 			return 'sweet! async thunks are working! who\'da thunk it?!';
+		case types.LOADING_FOOBAR:
+			return 'loading...';
 		default: 
 			return state;
 	}
