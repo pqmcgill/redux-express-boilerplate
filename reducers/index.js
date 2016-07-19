@@ -16,8 +16,19 @@ const sample = (state = 'foobar', action) => {
 	}
 };
 
+const messages = (state = [], action) => {
+	switch(action.type) {
+		case types.ADD_MESSAGE:
+		case types.RECEIVE_MESSAGE:
+			return [...state, action.msg];
+		default:
+			return state;
+	}
+};
+
 const rootReducer = combineReducers({
-	sample
+	sample,
+	messages
 });
 
 export default rootReducer;

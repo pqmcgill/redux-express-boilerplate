@@ -3,9 +3,10 @@ import { persistState } from 'redux-devtools';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import DevTools from '../containers/DevTools';
+import { chatMiddleware } from '../util/socket';
 
 const enhancer = compose(
-	applyMiddleware(thunk),
+	applyMiddleware(thunk, chatMiddleware),
 	DevTools.instrument(),
 	persistState(
 		window.location.href.match(

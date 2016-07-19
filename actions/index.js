@@ -25,3 +25,17 @@ export function asyncFoobar () {
 		}, 1000);
 	}
 }
+
+export function receiveMessage (message) {
+	return {
+		type: types.RECEIVE_MESSAGE,
+		msg: message
+	};
+}
+
+export function addMessage (message) {
+	return {
+		type: types.ADD_MESSAGE,
+		msg: message
+	};
+}

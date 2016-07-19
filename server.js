@@ -13,14 +13,25 @@ app.use(webpackDevMiddleware(compiler, {
 }));
 app.use(webpackHotMiddleware(compiler));
 
+var server = require('http').Server(app);
+
 app.get('/*', function(req, res) {
 	res.sendFile(__dirname + '/index.html');
 });
 
-app.listen(port, function(error) {
+server.listen(port, function(error) {
 	if (error) {
 		console.error(error);
 	} else {
 		console.info('==> 🌎 Listening on port %s. Open up http://localhost:%s/ in your browser.', port, port);
 	}
+});
+
+var io = require('socket.io')(server);
+
+io.on('connection', function(socket) {
+	socket.emit('message', { author: 'Patrick', message: 'Hello, World!' });
+	socket.on('message_added', function(message) {
+		console.log(message);
+	});
 });
