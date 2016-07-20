@@ -29,9 +29,13 @@ server.listen(port, function(error) {
 
 var io = require('socket.io')(server);
 
+var messages = [];
+
 io.on('connection', function(socket) {
-	socket.emit('message', { author: 'Patrick', message: 'Hello, World!' });
+	socket.emit('messages', messages);
 	socket.on('message_added', function(message) {
-		console.log(message);
+		var entry = { author: 'Patrick', message };
+		messages = messages.concat([ entry ]);
+		io.emit('message', entry);
 	});
 });

@@ -7,25 +7,27 @@ import MessageInput from '../components/MessageInput';
 
 class MessagesContainer extends Component {
 	render () {
-		const { messages } = this.props;
-		const { addMessage } = this.props.actions;
+		const { messages, newMessage } = this.props;
+		const { addMessage, typeMessage } = this.props.actions;
 		return (
 			<div>
 				<h2>Messages:</h2>
 				<MessageList messages={ messages } />
-				<MessageInput onSubmit={ addMessage } />
+				<MessageInput onSubmit={ addMessage } onChange={ typeMessage } value={ newMessage } />
 			</div>
 		);
 	}
 }
 
 MessagesContainer.propTypes = {
-	messages: PropTypes.array.isRequired
+	messages: PropTypes.array.isRequired,
+	newMessage: PropTypes.string.isRequired
 };
 
 const mapStateToProps = state => {
 	return {
-		messages: state.messages
+		messages: state.messages,
+		newMessage: state.newMessage
 	};
 };
 

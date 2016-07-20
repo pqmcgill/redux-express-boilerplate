@@ -39,3 +39,17 @@ export function addMessage (message) {
 		msg: message
 	};
 }
+
+export function typeMessage (message) {
+	return {
+		type: types.TYPE_MESSAGE,
+		msg: message
+	};
+}
+
+export function hydrateMessages (messages) {
+	return {
+		type: types.HYDRATE_MESSAGES,
+		msgs: messages
+	};
+}
