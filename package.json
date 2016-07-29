@@ -4,7 +4,7 @@
   "description": "example dev setup for react/redux/webpack/node/express",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server/server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/setup.js 'test/**/*.@(js|jsx)'",
     "test:watch": "npm test -- --watch"
   },
@@ -14,6 +14,7 @@
     "babel-polyfill": "^6.9.1",
     "classnames": "^2.2.5",
     "immutable": "^3.8.1",
+    "mongoose": "^4.5.7",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",

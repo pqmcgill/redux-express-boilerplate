@@ -8,11 +8,8 @@ class App extends Component {
 		const { sample, actions } = this.props;
 		return (
 			<div>
-				<h1>Hello, Worlddd!</h1>
+				<h1>Message Board</h1>
 				<h2>{ sample }</h2>
-				<button onClick={ actions.foo }>Foo</button>
-				<button onClick={ actions.bar }>Bar</button>
-				<button onClick={ actions.asyncFoobar }>Foobar thunk</button>
 			</div>
 		)
 	}

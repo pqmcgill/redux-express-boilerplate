@@ -1,0 +1,63 @@
+State model:
+
+state = {
+
+	session: {
+		uid: (user id<String>),
+		token: (session token<String>)
+	},
+
+	users: {
+		byId: {
+			(uid): {
+				id: (uid),
+				name: (<String>),
+				profileImg: (gravatar url<String>)
+			},
+			...
+		},
+		all: [
+			(uid),
+			...
+		]
+	},
+
+	posts: {
+		byId: {
+			(postId): {
+				id: (postId),
+				msg: (post body text<String>),
+				author: (uid),
+				likes: [
+					(uid),
+					...
+				]
+			},
+			...
+		},
+		all: [
+			(postId),
+			...
+		],
+		byTagId: {
+			(tagId): [
+				(postId),
+				...
+			]
+		} 
+	},
+
+	tags: {
+		byId: {
+			(tagId): {
+				id: (tagId),
+				title: (String)
+			}
+		},
+		all: [
+			(tagId),
+			...
+		]
+	}
+
+};
